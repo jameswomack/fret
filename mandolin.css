@@ -1,0 +1,162 @@
+body {
+  background: #292727;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav#chord-detection {
+  text-align: center;
+  height: 1em;
+  font-size: 3em;
+  color: white;
+  position: sticky; 
+  top: 0;
+  background-color: #292727;
+  padding-bottom: 0.6em;
+}
+
+table[data-fretboard="mandolin"] {
+  width: 100%;
+  max-width: 350px;
+  margin: 0px auto;
+}
+
+table[data-fretboard="mandolin"] caption {
+  margin-bottom: 1em;
+}
+
+table[data-fretboard="mandolin"] tbody {
+  height: 14in;
+  background-image: linear-gradient(to right, #f2dfcb, #ffe1c3);
+}
+
+table[data-fretboard="mandolin"] .nut {
+  height: 0.830in;
+  font-size: 2em;
+  background-image: linear-gradient(to right, #2c2c2c, #52100a,  #552623, #723d1d, #000000);
+  color: white;
+}
+
+table[data-fretboard="mandolin"] .nut, table[data-fretboard="mandolin"] .fret {
+  border-bottom: 2px solid grey;
+}
+
+.fret-string.selected .note {
+  background-color: #e4baa5;
+  border-radius: 1em;
+  font-weight: 900;
+  font-style: italic;
+  padding: 0.3em;
+  color: black;
+}
+
+/* TODO: table[data-fretboard="mandolin"]  for each fo these */
+.fret:nth-child(1) {
+  height: 0.786in;
+  font-size: 2em;
+}
+
+.fret:nth-child(2) {
+  height: 0.742in;
+  font-size: 1.95em;
+}
+
+.fret:nth-child(3) {
+  height: 0.700in;
+  font-size: 1.9em;
+}
+
+.fret:nth-child(4) {
+  height: 0.661in;
+  font-size: 1.85em;
+}
+
+.fret:nth-child(5) {
+  height: 0.624in;
+  font-size: 1.8em;
+}
+
+.fret:nth-child(6) {
+  height: 0.589in;
+  font-size: 1.75em;
+}
+
+.fret:nth-child(7) {
+  height: 0.5556in;
+  font-size: 1.7em;
+}
+
+.fret:nth-child(8) {
+  height: 0.524in;
+  font-size: 1.65em;
+}
+
+.fret:nth-child(9) {
+  height: 0.495in;
+  font-size: 1.6em;
+}
+
+.fret:nth-child(10) {
+  height: 0.467in;
+  font-size: 1.55em;
+}
+
+.fret:nth-child(11) {
+  height: 0.441in;
+  font-size: 1.5em;
+}
+
+.fret:nth-child(12) {
+  height: 0.416in;
+  font-size: 1.45em;
+}
+
+.fret:nth-child(13) {
+  height: 0.393in;
+  font-size: 1.4em;
+}
+
+.fret:nth-child(14) {
+  height: 0.371in;
+  font-size: 1.35em;
+}
+
+.fret:nth-child(15) {
+  height: 0.350in;
+  font-size: 1.3em;
+}
+
+.fret:nth-child(16) {
+  height: 0.330in;
+  font-size: 1.25em;
+}
+
+.fret:nth-child(17) {
+  height: 0.312in;
+  font-size: 1.2em;
+}
+
+.fret:nth-child(18) {
+  height: 0.294in;
+  font-size: 1.15em;
+}
+
+.fret:nth-child(19) {
+  height: 0.278in;
+  font-size: 1.1em;
+}
+
+.fret:nth-child(20) {
+  height: 0.262in;
+  font-size: 1em;
+}
+
+.fret-string {
+  border-bottom: 2px solid grey;
+  margin: 0px;
+  text-align: center;
+  width: 40px;
+}
+
+.nut td {
+  border-bottom: 2px solid orange;
+}

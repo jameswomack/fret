@@ -1,0 +1,60 @@
+<html>
+  <body>  
+    <nav id="chord-detection"></nav>  
+    <div>
+    <table 
+      cellspacing="0"
+      data-fretboard="mandolin" 
+      data-fretboard-index="0"
+      data-tuning="G D A E"
+      data-tuning-delimiter=" "
+      data-fret-count="20"
+      >
+      <caption></caption>
+      <tbody></tbody>
+    </table>
+  </div>
+  </body>
+  <link rel="stylesheet" type="text/css" href="mandolin.css">
+  <script type="module">
+    import {render} from './mandolin.js'
+
+    // START: state the transcends renders
+    const tableElement = document.querySelector('table[data-fretboard-index="0"]')
+    let _KEY_UP_LISTENER__ = () => {} // eslint-disable-line @typescript-eslint/no-empty-function
+    // END: state the transcends renders
+
+    const {
+      tuning,
+      tuningDelimiter,
+    } = tableElement.dataset
+
+    const strings = tuning.split(tuningDelimiter) 
+
+    // Create virtual DOM matrix of string->fret state to enable 
+    // capabilities such as highlighting and un-highlighting particular
+    // spots in a manner conducive to representing chord shape et al
+    const _fretboardMatrix = []
+    // easy to modify data-tuning and get a standard guitar etc.
+    strings.forEach(() => _fretboardMatrix.push([]))
+    _fretboardMatrix.forEach(function (array) {
+      for (let index = 0; index < 20; index++) {
+        array.push({
+          // Default to open position for each string
+          shouldUseSelectedClass: index === 0 ? true : false
+        })
+      }
+    })
+
+    render({
+      tableElement,
+      fretboardMatrix: _fretboardMatrix,
+      resetKeyUpListener (listener) {
+        const KEYUP_k = 'keyup'
+        document.removeEventListener(KEYUP_k, _KEY_UP_LISTENER__)
+        _KEY_UP_LISTENER__ = listener
+        document.addEventListener(KEYUP_k, _KEY_UP_LISTENER__)
+      }
+    })
+  </script>
+</html>
